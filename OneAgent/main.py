@@ -15,6 +15,8 @@ cors_origins_env = os.getenv("CORS_ORIGINS", "").strip()
 allow_origins = [o.strip() for o in cors_origins_env.split(",") if o.strip()] or [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://ai-marketplace-frontend-phi.vercel.app",
+    "https://ai-marketplace-frontend-iszgitj6q-lakshaymittal78s-projects.vercel.app"
 ]
 
 app.add_middleware(
