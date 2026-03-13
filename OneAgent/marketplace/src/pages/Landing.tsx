@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Brain, Code, Search, Image, Presentation, Check, Target, Users, Mail } from 'lucide-react';
+import { Brain, Code, Search, Image, Presentation, Check, Target, Users, Mail, Zap } from 'lucide-react';
 
 const FloatingCard = ({ delay, children }: { delay: number; children: React.ReactNode }) => (
   <motion.div
