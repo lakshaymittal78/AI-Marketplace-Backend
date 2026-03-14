@@ -58,10 +58,13 @@ Return ONLY this JSON format:
             else:
                 tf.add_paragraph().text = point
 
-    # Save file
+
+# Save file
     filename = f"{slides_data['title'].replace(' ', '_')}.pptx"
     filepath = f"outputs/{filename}"
     os.makedirs("outputs", exist_ok=True)
     prs.save(filepath)
 
-    return f"PPT created successfully! File saved at: {filepath}"
+    base_url = os.getenv("RAILWAY_PUBLIC_DOMAIN", "localhost:8000")
+    download_url = f"https://{base_url}/download/{filename}"
+    return f"PPT created successfully! [Download your presentation]({download_url})"
