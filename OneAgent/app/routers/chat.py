@@ -14,7 +14,7 @@ class ChatRequest(BaseModel):
     message: str
     history: list[dict] = []
     
-@router.post("/")
+@router.post("")
 async def chat(request: ChatRequest,current_user = Depends(get_current_user)):
     result = await agent.ainvoke({"message": request.message,"history": request.history})
     return {"response": result["response"], "history": result["history"]}
